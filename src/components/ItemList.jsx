@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AddItem from '../components/AddItem';
 
-const ItemList = (props) => (<p>test</p>);
+export default class ItemList extends Component {
 
-export default ItemList;
+    render() {
+        return(
+            <div>
+                <p>test</p>
+                <AddItem />
+            </div>
+        )
+    }
+    
+}

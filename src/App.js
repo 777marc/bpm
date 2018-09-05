@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Nav';
-import AddItem from './components/AddItem';
+import ItemList from './components/ItemList';
 
 class App extends Component {
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />  
-        <AddItem />
+        <ItemList />
       </div>
     );
   }
