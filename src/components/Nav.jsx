@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { simpleAction } from '../actions/simpleAction';
 
-const Nav = () => (
-    <div>
-        <p>main nav</p>
-    </div>
-);
+class Nav extends Component {
 
-export default Nav;
+    simpleAction = (event) => {
+        this.props.simpleAction();
+    }
+
+    render(){
+        return(
+            <div>
+                <p>main nav</p>
+                <button onClick={this.props.simpleAction}>Test redux action</button>
+                <pre>
+                {
+                JSON.stringify(this.props)
+                }
+                </pre>                  
+            </div>
+        );
+    }
+}
+
+  const mapStateToProps = state => ({
+      ...state
+  });
+  
+  const mapDispatchToProps = dispatch => ({
+    simpleAction: () => dispatch(simpleAction())
+  });
+  
+  export default connect(mapStateToProps,mapDispatchToProps) (Nav);
